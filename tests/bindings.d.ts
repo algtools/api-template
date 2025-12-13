@@ -1,7 +1,6 @@
 import type { D1Migration } from "cloudflare:test";
-import type { Env as AppEnv } from "../src/bindings";
 
-export type Env = AppEnv & {
+export type Env = globalThis.Env & {
 	MIGRATIONS: D1Migration[];
 };
 
