@@ -4,13 +4,13 @@
 	"name": "api-template",
 	"upload_source_maps": true,
 	"observability": {
-		"enabled": true
+		"enabled": true,
 	},
 	"d1_databases": [
 		{
 			"binding": "DB",
 			"database_name": "backend-template-dev",
-			"database_id": "95deb7dc-5bff-473c-8729-d8b817c41a5c"
-		}
-	]
+			"database_id": "95deb7dc-5bff-473c-8729-d8b817c41a5c",
+		},
+	],
 }

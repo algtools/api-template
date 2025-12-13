@@ -22,4 +22,3 @@ describe("API docs", () => {
 		expect(body).toHaveProperty("info");
 	});
 });
-
