@@ -17,9 +17,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
-      - run: npm ci
-      - run: npm run format:check
+          cache: pnpm
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.20.0
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run format:check
 
   lint:
     name: Lint (ESLint)
@@ -29,9 +32,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
-      - run: npm ci
-      - run: npm run lint
+          cache: pnpm
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.20.0
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run lint
 
   typecheck:
     name: Type-check (tsc)
@@ -41,9 +47,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
-      - run: npm ci
-      - run: npm run type-check
+          cache: pnpm
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.20.0
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run type-check
 
   test:
     name: Tests (Vitest + coverage)
@@ -53,6 +62,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
-      - run: npm ci
-      - run: npm run vitest:coverage
+          cache: pnpm
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.20.0
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run vitest:coverage
